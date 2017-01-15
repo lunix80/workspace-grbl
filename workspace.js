@@ -183,7 +183,6 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             var that = this;
             chilipeppr.load(
                 "#com-chilipeppr-widget-spconsole-instance",
-                // "http://fiddle.jshell.net/chilipeppr/rczajbx0/show/light/",
                  "http://jsfiddle.net/lunix80/trv108q4/show/light",
                 function() {
                     // Callback after widget loaded into #com-chilipeppr-widget-spconsole-instance
@@ -1393,8 +1392,8 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             // Serial Port Log Window
             // http://jsfiddle.net/chilipeppr/rczajbx0/
             chilipeppr.load("#com-chilipeppr-serialport-log",
-                "http://fiddle.jshell.net/chilipeppr/rczajbx0/show/light/",
-
+                // "http://fiddle.jshell.net/chilipeppr/rczajbx0/show/light/",
+                    "http://jsfiddle.net/lunix80/trv108q4/show/light",
                 function() {
                     cprequire(
                         ["inline:com-chilipeppr-widget-spconsole"],
@@ -1449,8 +1448,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             // com-chilipeppr-grbl
             chilipeppr.load(
                 "com-chilipeppr-grbl",
-                // "http://fiddle.jshell.net/jarret/9aaL8jg4/show/light/",
-                   "http://jsfiddle.net/lunix80/L4nvo7r7/show/light/",
+                 "http://jsfiddle.net/lunix80/L4nvo7r7/show/light/",
                 function() {
                     cprequire(
                         ["inline:com-chilipeppr-widget-grbl"], //"inline:com-chilipeppr-widget-spconsole"],
