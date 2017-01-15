@@ -1441,6 +1441,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             var oldOnRecvLine = spc.onRecvLine.bind(spc);
                             var newOnRecvLine = function(data) {
                                 //ignore incoming status update to keep console clear otherwise continue with original function
+                                
                                 console.log("GRBL: AltOnRecvLine: " + data.dataline);
                                 
                                 var confMsg = /^\$([0-9]+)=(.*)/g;
@@ -1451,18 +1452,10 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                                     data.dataline = data.dataline.replace("\n","") + " (" +configStrings[parseInt(confStr[1])]+ ") \n";
                                 }
                                                     
-                                
-                                
-                                
                                 if (!(data.dataline.appendTo) && data.dataline.indexOf('<') >= 0){
                                
-                                     data.dataline = data.dataline.replace("<", "&lt;").replace(">", "&gt;");
-                                     
-                                     
-                                     
-                                     
-                                     
-                                      oldOnRecvLine(data);  
+                                    data.dataline = data.dataline.replace("<", "&lt;").replace(">", "&gt;");
+                                    oldOnRecvLine(data);  
                                 }   
                                
                                
@@ -1492,7 +1485,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             spc.init(true, /^ok|^\n/);
                             */
                             
-                            
+                             spc.onRecvLine = newOnRecvLine;
                             spc.init(true, /(<(.+)|(.+)>)|(&lt;)/);
                             
 
