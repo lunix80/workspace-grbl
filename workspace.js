@@ -1452,8 +1452,10 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             // com-chilipeppr-grbl
            
             chilipeppr.load(
-              "#com-chilipeppr-widget-grbl-instance",
-              "http://raw.githubusercontent.com/lunix80/grbl1-test-widget/master/auto-generated-widget.html",
+              "#com-chilipeppr-widget-grbl",
+              // "http://raw.githubusercontent.com/lunix80/grbl1-test-widget/master/auto-generated-widget.html",
+              
+              "http://jsfiddle.net/lunix80/L4nvo7r7/show/light/",
               function() {
                 // Callback after widget loaded into #myDivWidgetGrbl
                 // Now use require.js to get reference to instantiated widget
