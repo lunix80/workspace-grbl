@@ -1450,6 +1450,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                 "com-chilipeppr-grbl",
                 // "http://jsfiddle.net/lunix80/L4nvo7r7/show/light/", 
                 // switching from jsfiddle to cluoud9
+                
                 "https://raw.githubusercontent.com/lunix80/grbl1-test-widget/master/auto-generated-widget.html",
                 function() {
                     cprequire(
