@@ -1400,7 +1400,8 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
                         function(spc) {
 
-                            //stop spconsole from showing status requests responses from jsps
+                          /*
+                          //stop spconsole from showing status requests responses from jsps
                             var oldOnRecvLine = spc.onRecvLine.bind(spc);
                             var newOnRecvLine = function(data) {
                                 //ignore incoming status update to keep console clear otherwise continue with original function
@@ -1423,6 +1424,9 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             spc.jsonOnQueue = newJsonOnQueue;
 
                             spc.init(true, /^ok|^\n/);
+                            */
+                            spc.init(true, /(<(.+)|(.+)>)|(&lt;)/);
+                            
 
                             // resize this console on a browser resize
                             $(window).on('resize', function(evt) {
