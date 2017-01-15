@@ -1392,25 +1392,75 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             // Serial Port Log Window
             // http://jsfiddle.net/chilipeppr/rczajbx0/
             chilipeppr.load("#com-chilipeppr-serialport-log",
-                // "http://fiddle.jshell.net/chilipeppr/rczajbx0/show/light/",
-                    "http://jsfiddle.net/lunix80/trv108q4/show/light",
+                 "http://fiddle.jshell.net/chilipeppr/rczajbx0/show/light/",
+                  //   "http://jsfiddle.net/lunix80/trv108q4/show/light",
                 function() {
                     cprequire(
                         ["inline:com-chilipeppr-widget-spconsole"],
 
                         function(spc) {
-
-                          /*
+                            
+                             var configStrings = {
+                                    "0": "Step pulse time, microseconds",
+                                    "1": "Step idle delay, milliseconds",
+                                    "2": "Step pulse invert, mask",
+                                    "3": "Step direction invert, mask",
+                                    "4": "Invert step enable pin, boolean",
+                                    "5": "Invert limit pins, boolean",
+                                    "6": "Invert probe pin, boolean",
+                                    "10": "Status report options, mask",
+                                    "11": "Junction deviation, millimeters",
+                                    "12": "Arc tolerance, millimeters",
+                                    "13": "Report in inches, boolean",
+                                    "20": "Soft limits enable, boolean",
+                                    "21": "Hard limits enable, boolean",
+                                    "22": "Homing cycle enable, boolean",
+                                    "23": "Homing direction invert, mask",
+                                    "24": "Homing locate feed rate, mm/min",
+                                    "25": "Homing search seek rate, mm/min",
+                                    "26": "Homing switch debounce delay, milliseconds",
+                                    "27": "Homing switch pull-off distance, millimeters",
+                                    "30": "Maximum spindle speed, RPM",
+                                    "31": "Minimum spindle speed, RPM",
+                                    "32": "Laser-mode enable, boolean",
+                                    "100": "X-axis steps per millimeter",
+                                    "101": "Y-axis steps per millimeter",
+                                    "102": "Z-axis steps per millimeter",
+                                    "110": "X-axis maximum rate, mm/min",
+                                    "111": "Y-axis maximum rate, mm/min",
+                                    "112": "Z-axis maximum rate, mm/min",
+                                    "120": "X-axis acceleration, mm/sec^2",
+                                    "121": "Y-axis acceleration, mm/sec^2",
+                                    "122": "Z-axis acceleration, mm/sec^2",
+                                    "130": "X-axis maximum travel, millimeters",
+                                    "131": "Y-axis maximum travel, millimeters",
+                                    "132": "Z-axis maximum travel, millimeters"
+                                };
+                          
                           //stop spconsole from showing status requests responses from jsps
                             var oldOnRecvLine = spc.onRecvLine.bind(spc);
                             var newOnRecvLine = function(data) {
                                 //ignore incoming status update to keep console clear otherwise continue with original function
                                 console.log("GRBL: AltOnRecvLine: " + data.dataline);
+                                
+                                if (!(data.dataline.appendTo) && data.dataline.indexOf('<') >= 0){
+                               
+                                     data.dataline = data.dataline.replace("<", "&lt;").replace(">", "&gt;");
+                                      oldOnRecvLine(data);  
+                                }   
+                               
+                               
+                             /*  
                                 if (data.dataline.search(/^<|^\$G|^\?|^\[/) < 0 || $('#com-chilipeppr-widget-grbl .grbl-verbose').hasClass("enabled")) {
                                     data.dataline = data.dataline.replace("<", "&lt;").replace(">", "&gt;");
                                     oldOnRecvLine(data);
                                 }
+                                */
+                                
+                                
                             };
+                          
+                          /*
                             var oldJsonOnQueue = spc.jsonOnQueue.bind(spc);
                             var newJsonOnQueue = function(data) {
                                 console.log("GRBL: AltJsonOnQueue: " + data);
@@ -1425,6 +1475,8 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
                             spc.init(true, /^ok|^\n/);
                             */
+                            
+                            
                             spc.init(true, /(<(.+)|(.+)>)|(&lt;)/);
                             
 
