@@ -1601,7 +1601,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                                     "132": "Z-axis maximum travel, millimeters"
                                 };
                           
-                          //stop spconsole from showing status requests responses from jsps
+                            //stop spconsole from showing status requests responses from jsps
                             var oldOnRecvLine = spc.onRecvLine.bind(spc);
                             var newOnRecvLine = function(data) {
                                 //ignore incoming status update to keep console clear otherwise continue with original function
@@ -1615,42 +1615,14 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                                     // adding some info to config messages 
                                     data.dataline = data.dataline.replace("\n","") + " (" +configStrings[parseInt(confStr[1])]+ ") \n";
                                 }
-                                                    
                                 if (!(data.dataline.appendTo) && data.dataline.indexOf('<') >= 0){
-                               
                                     data.dataline = data.dataline.replace("<", "&lt;").replace(">", "&gt;");
-                                   //  oldOnRecvLine(data);  
                                 }   
                                
                                 oldOnRecvLine(data);  
-                               
-                             /*  
-                                if (data.dataline.search(/^<|^\$G|^\?|^\[/) < 0 || $('#com-chilipeppr-widget-grbl .grbl-verbose').hasClass("enabled")) {
-                                    data.dataline = data.dataline.replace("<", "&lt;").replace(">", "&gt;");
-                                    oldOnRecvLine(data);
-                                }
-                                */
-                                
-                                
+                           
                             };
-                          
-                          /*
-                            var oldJsonOnQueue = spc.jsonOnQueue.bind(spc);
-                            var newJsonOnQueue = function(data) {
-                                console.log("GRBL: AltJsonOnQueue: " + data);
-                                if (data.D.search(/^<|^\$G|^\?|^\[/) < 0 || $('#com-chilipeppr-widget-grbl .grbl-verbose').hasClass("enabled")) {
-                                    data.D = data.D.replace("<", "&lt;").replace(">", "&gt;");
-                                    oldJsonOnQueue(data);
-                                }
-                            };
-
                             spc.onRecvLine = newOnRecvLine;
-                            spc.jsonOnQueue = newJsonOnQueue;
-
-                            spc.init(true, /^ok|^\n/);
-                            */
-                            
-                             spc.onRecvLine = newOnRecvLine;
                             spc.init(true, /(<(.+)|(.+)>)|(&lt;)/);
                             
 
@@ -1680,8 +1652,8 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             chilipeppr.load(
               "#com-chilipeppr-widget-grbl",
               // "http://raw.githubusercontent.com/lunix80/grbl1-test-widget/master/auto-generated-widget.html",
-              
-              "http://jsfiddle.net/lunix80/L4nvo7r7/show/light/",
+              "https://raw.githubusercontent.com/jpadie/grbl1-test-widget/master/auto-generated-widget.html", // jpadie version
+              // "http://jsfiddle.net/lunix80/L4nvo7r7/show/light/",  my version
               function() {
                 // Callback after widget loaded into #myDivWidgetGrbl
                 // Now use require.js to get reference to instantiated widget
