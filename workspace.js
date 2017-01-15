@@ -1452,7 +1452,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             // com-chilipeppr-grbl
            
             chilipeppr.load(
-              "#com-chilipeppr-widget-grbl",
+              "#com-chilipeppr-widget-grbl-instance",
               "http://raw.githubusercontent.com/lunix80/grbl1-test-widget/master/auto-generated-widget.html",
               function() {
                 // Callback after widget loaded into #myDivWidgetGrbl
