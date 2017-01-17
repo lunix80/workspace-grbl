@@ -1521,6 +1521,19 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                 });
                 */
 
+
+            chilipeppr.load(
+                "#com-chilipeppr-grbl-joystick",
+                "https://raw.githubusercontent.com/lunix80/grbl-joystick-widget/master/auto-generated-widget.html",
+                function(){
+                cprequire(["inline:com-chilipepper-grbl-joystick"],
+                    function(joy){
+                        
+                        joy.init();
+                    });
+            });
+
+
             // Serial Port Selector
             // http://jsfiddle.net/chilipeppr/vetj5fvx/
             chilipeppr.load("com-chilipeppr-serialport-spselector",
