@@ -1520,8 +1520,6 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         });
                 });
                 */
-
-
             chilipeppr.load(
                 "#com-chilipeppr-grbl-joystick",
                 "https://raw.githubusercontent.com/lunix80/grbl-joystick-widget/master/auto-generated-widget.html",
