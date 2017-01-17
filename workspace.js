@@ -1400,7 +1400,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
                         function(spc) {
                             
-                             var configStrings = {
+                           /*  var configStrings = {
                                     "0": "Step pulse time, microseconds",
                                     "1": "Step idle delay, milliseconds",
                                     "2": "Step pulse invert, mask",
@@ -1459,6 +1459,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                            
                             };
                             spc.onRecvLine = newOnRecvLine;
+                            */
                             spc.init(true, /(<(.+)|(.+)>)|(&lt;)/);
                             
 
