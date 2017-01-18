@@ -1458,7 +1458,32 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             };
                             spc.onRecvLine = newOnRecvLine;
                             */
+                            
+                               //stop spconsole from showing status requests responses from jsps
+                            var oldOnRecvLine = spc.onRecvLine.bind(spc);
+                            var newOnRecvLine = function(data) {
+                                //ignore incoming status update to keep console clear otherwise continue with original function
+                                console.log("GRBL: AltOnRecvLine: " + data.dataline);
+                                if (data.dataline.search(/^<|^\$G|^\?|^\[/) < 0 || $('#com-chilipeppr-widget-grbl .grbl-verbose').hasClass("enabled")) {
+                                    data.dataline = data.dataline.replace("<", "&lt;").replace(">", "&gt;");
+                                    oldOnRecvLine(data);
+                                }
+                            };
+                            var oldJsonOnQueue = spc.jsonOnQueue.bind(spc);
+                            var newJsonOnQueue = function(data) {
+                                console.log("GRBL: AltJsonOnQueue: " + data);
+                                if (data.D.search(/^<|^\$G|^\?|^\[/) < 0 || $('#com-chilipeppr-widget-grbl .grbl-verbose').hasClass("enabled")) {
+                                    data.D = data.D.replace("<", "&lt;").replace(">", "&gt;");
+                                    oldJsonOnQueue(data);
+                                }
+                            };
+
+                            spc.onRecvLine = newOnRecvLine;
+                            spc.jsonOnQueue = newJsonOnQueue;
+
                             spc.init(true, /^ok|^\n/);
+
+                    
                             
 
                             // resize this console on a browser resize
