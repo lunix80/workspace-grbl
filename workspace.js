@@ -1359,8 +1359,6 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         });
                 });
 
-
-
             chilipeppr.load(
                 "#com-chilipeppr-ws-macro",
                 "http://jsfiddle.net/forstuvning/3gmfmnna/8/show/light/",
