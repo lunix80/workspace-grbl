@@ -1483,9 +1483,6 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
                             spc.init(true, /^ok|^\n/);
 
-                    
-                            
-
                             // resize this console on a browser resize
                             $(window).on('resize', function(evt) {
                                 //console.log("serial-port-console. resize evt:", evt);
