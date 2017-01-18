@@ -1460,7 +1460,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             };
                             spc.onRecvLine = newOnRecvLine;
                             */
-                            spc.init(true, /(<(.+)|(.+)>)|(&lt;)/);
+                            spc.init(true, /^ok|^\n/);
                             
 
                             // resize this console on a browser resize
