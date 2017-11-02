@@ -166,7 +166,7 @@ cprequire_test(["inline:com-chilipeppr-workspace-grbl"], function(ws) {
     console.log("initting workspace");
 
     /**
-     * The Root workspace (when you see the ChiliPeppr Header) auto Loads the Flash 
+     * The Root workspace (when you see the ChiliPeppr Header) auto Loads the Flash
      * Widget so we can show the 3 second flash messages. However, in test mode we
      * like to see them as well, so just load it from the cprequire_test() method
      * so we have similar functionality when testing this workspace.
@@ -348,7 +348,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             chilipeppr.load(
                 "#com-chilipeppr-widget-spconsole-instance",
                 "https://raw.githubusercontent.com/chilipeppr/widget-console/master/auto-generated-widget.html",
-//                 "http://jsfiddle.net/lunix80/trv108q4/show/light",
+                    //                 "http://jsfiddle.net/lunix80/trv108q4/show/light",
                 function() {
                     // Callback after widget loaded into #com-chilipeppr-widget-spconsole-instance
                     cprequire(
@@ -409,7 +409,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             // com-chilipeppr-ws-autolevel
             // hiding auto leveller as unsure what features supported in grbl. will come back to this.
             // http:jsfiddle.net/jarret/uvVL6/
-            
+
             chilipeppr.load(
                 "#com-chilipeppr-ws-autolevel",
                 "http://raw.githubusercontent.com/chilipeppr-grbl/grbl-widget-autolevel/master/auto-generated-widget.html",
@@ -436,26 +436,6 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         });
                     });
                 });
-            /*
-            // Inject new div to contain widget or use an existing div with an ID
-            $("body").append('<' + 'div id="myDivWidgetAutolevel"><' + '/div>');
-
-            chilipeppr.load(
-                "#myDivWidgetAutolevel",
-                "http://raw.githubusercontent.com/raykholo/grbl-widget-autolevel/master/auto-generated-widget.html",
-                function() {
-                    // Callback after widget loaded into #myDivWidgetAutolevel
-                    // Now use require.js to get reference to instantiated widget
-                    cprequire(
-                        ["inline:com-chilipeppr-widget-autolevel"], // the id you gave your widget
-                        function(myObjWidgetAutolevel) {
-                            // Callback that is passed reference to the newly loaded widget
-                            console.log("Widget / Auto-Level just got loaded.", myObjWidgetAutolevel);
-                            myObjWidgetAutolevel.init();
-                        }
-                    );
-                }
-            );*/
 
 
             // Macro
@@ -489,7 +469,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                 }); //End Macro
 
 
-        
+
             // Eagle BRD Import
             // com-chilipeppr-widget-eagle
 
@@ -623,7 +603,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             };
             eagleObj.init();
 
-        
+
 
             var touchPlateObj = {
                 touchPlateBtn: null,
@@ -741,10 +721,10 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                                 "Workspace");
                         });
                     });
-          
-          
-*/
-            //Unsure what the purpose of this is; loading the wrong widgets. 
+
+
+*
+            //Unsure what the purpose of this is; loading the wrong widgets.
             // MODIFY
             // This is a fiddle that looks at the Grbl workspace being instantiated
             // here and attaches 3 menu items. 1) the pubsub viewer dialog so users
@@ -1003,7 +983,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                                                 else {
                                                     // use feedrate from prior lines
                                                     args.feedrate = this.lastFeedrate;
-                                                    //if (args.feedrate 
+                                                    //if (args.feedrate
                                                 }
 
                                                 //console.log("about to call handler. args:", args, "info:", info, "this:", this);
@@ -1050,7 +1030,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             threed.init();
                             console.log("3d viewer initted");
 
-                            // Ok, do someting whacky. Try to move the 3D Viewer 
+                            // Ok, do someting whacky. Try to move the 3D Viewer
                             // Control Panel to the center column
                             setTimeout(function() {
                                 var element = $('#com-chilipeppr-3dviewer .panel-heading').detach();
@@ -1090,7 +1070,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             // http://jsfiddle.net/chilipeppr/a4g5ds5n/
             chilipeppr.load("#com-chilipeppr-gcode-list",
                // "http://fiddle.jshell.net/chilipeppr/a4g5ds5n/show/light/",
-                "https://raw.githubusercontent.com/chilipeppr/widget-gcodelist/master/auto-generated-widget.html",             
+                "https://raw.githubusercontent.com/chilipeppr/widget-gcodelist/master/auto-generated-widget.html",
                 //"http://jsfiddle.net/jarret/0a53jy0x/show/light",
 
                 function() {
@@ -1339,7 +1319,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         ["inline:com-chilipeppr-widget-spconsole"],
 
                         function(spc) {
-                            
+
                            /*  var configStrings = {
                                     "0": "Step pulse time, microseconds",
                                     "1": "Step idle delay, milliseconds",
@@ -1376,31 +1356,31 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                                     "131": "Y-axis maximum travel, millimeters",
                                     "132": "Z-axis maximum travel, millimeters"
                                 };
-                          
+
                             //stop spconsole from showing status requests responses from jsps
                             var oldOnRecvLine = spc.onRecvLine.bind(spc);
                             var newOnRecvLine = function(data) {
                                 //ignore incoming status update to keep console clear otherwise continue with original function
-                                
+
                                 console.log("GRBL: AltOnRecvLine: " + data.dataline);
-                                
+
                                 var confMsg = /^\$([0-9]+)=(.*)/g;
                                 var confStr = confMsg.exec(data.dataline);
-                                  
+
                                 if (confStr){
-                                    // adding some info to config messages 
+                                    // adding some info to config messages
                                     data.dataline = data.dataline.replace("\n","") + " (" +configStrings[parseInt(confStr[1])]+ ") \n";
                                 }
                                 if (!(data.dataline.appendTo) && data.dataline.indexOf('<') >= 0){
                                     data.dataline = data.dataline.replace("<", "&lt;").replace(">", "&gt;");
-                                }   
-                               
-                                oldOnRecvLine(data);  
-                           
+                                }
+
+                                oldOnRecvLine(data);
+
                             };
                             spc.onRecvLine = newOnRecvLine;
                             */
-                            
+
                                //stop spconsole from showing status requests responses from jsps
                             var oldOnRecvLine = spc.onRecvLine.bind(spc);
                             var newOnRecvLine = function(data) {
@@ -1447,7 +1427,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             // GRBL
             // http://jsfiddle.net/jarret/b5L2rtgc/ //alternate test version of grbl controller
             // com-chilipeppr-grbl
-           
+
             chilipeppr.load(
               "#com-chilipeppr-widget-grbl",
                "http://raw.githubusercontent.com/lunix80/grbl1-test-widget/master/auto-generated-widget.html",
@@ -1468,14 +1448,14 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
               }
             );
 
-            // Lunix Joystick 
+            // Lunix Joystick
             chilipeppr.load(
                 "#com-chilipeppr-grbl-joystick",
                 "https://raw.githubusercontent.com/lunix80/grbl-joystick-widget/master/auto-generated-widget.html",
                 function(){
                 cprequire(["inline:com-chilipeppr-grbl-joystick"],
                     function(joy){
-                        
+
                         joy.init();
                     });
             });
@@ -1539,7 +1519,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             </div>
                             <div id="com-chilipeppr-ws-gcode-dragdrop" style="margin-right:6px;" class=""></div>
                             </div>
-                        <div class="btn-group"> 
+                        <div class="btn-group">
                             <button type="button" class="btn btn-xs btn-default autolevel-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Allows you to auto-level your PCB before milling. Most raw PCB boards have a slight warpage. This widget lets you probe the warpage and then it auto-scales your Gcode to match the warpage so you get very clean/predictable z-positions in your milling job."
                             data-trigger="hover" data-delay="100">Auto-Level</button>
                             <!-- </div>
@@ -1547,7 +1527,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             <button type="button" class="btn btn-xs btn-default macro-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run a macro." data-trigger="hover" data-delay="100">Macro</button>
                             <!-- </div>
                         <div class="btn-group"> -->
-                            
+
                             <button type="button" class="btn btn-xs btn-default eagle-button" data-container="body" data-toggle="popover" data-placement="auto" xdata-content="Laser Solderer" data-trigger="hover" data-delay="100">Eagle BRD Import</button>
                             <button type="button" class="btn btn-xs btn-default touchplate-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Use a touch plate to easily figure out your Z zero of your workpiece and set it." data-trigger="hover"
                             data-delay="100">Touch Plate</button>
@@ -1556,14 +1536,14 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             <!-- </div> -->
                         </div>
                     </div>
-                
+
                     <!-- Auto Leveller -->
                     <div class="zhigh hidden" id="com-chilipeppr-ws-autolevel">Auto-Level Here</div>
                     <!-- Macro -->
                     <div class="zhigh hidden" id="com-chilipeppr-ws-macro">Macro Here</div>
                     <!-- Eagle BRD -->
                     <div class="zhigh hidden" id="com-chilipeppr-ws-eagle">Eagle BRD Here</div>
-                
+
                     <!-- Touch Plate -->
                     <div class="zhigh hidden" id="com-chilipeppr-ws-touchplate">Touch Plate Here</div>
                     <!-- Gcode List -->
