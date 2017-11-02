@@ -724,10 +724,11 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
             // Workspace Menu with Workspace Billboard
             // http://jsfiddle.net/jlauer/yC8Hv/
+            /*
             chilipeppr.load(
                 "#com-chilipeppr-ws-gcode-menu-billboard",
                  "http://raw.githubusercontent.com/chilipeppr/widget-pubsubviewer/master/auto-generated-widget.html",
-//                   "http://fiddle.jshell.net/chilipeppr/6z76Z/show/light/"
+                    //   "http://fiddle.jshell.net/chilipeppr/6z76Z/show/light/"
                     function() {
                         require(['inline:com-chilipeppr-elem-pubsubviewer'], function(pubsubviewer) {
                             // you are asking the pubsubviewer to show its menu
@@ -742,7 +743,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                     });
           
           
-
+*/
             //Unsure what the purpose of this is; loading the wrong widgets. 
             // MODIFY
             // This is a fiddle that looks at the Grbl workspace being instantiated
@@ -1107,7 +1108,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             chilipeppr.load(
                 "com-chilipeppr-xyz",
                 "https://raw.githubusercontent.com/chilipeppr-grbl/widget-grbl-xyz/master/auto-generated-widget.html",
-//                "http://fiddle.jshell.net/chilipeppr/gh45j/97/show/light/",
+                  //                "http://fiddle.jshell.net/chilipeppr/gh45j/97/show/light/",
 
                 function() {
                     cprequire(
@@ -1449,8 +1450,8 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
            
             chilipeppr.load(
               "#com-chilipeppr-widget-grbl",
-              // "http://raw.githubusercontent.com/lunix80/grbl1-test-widget/master/auto-generated-widget.html",
-               "https://raw.githubusercontent.com/jpadie/grbl1-test-widget/master/auto-generated-widget.html", // jpadie version
+               "http://raw.githubusercontent.com/lunix80/grbl1-test-widget/master/auto-generated-widget.html",
+              //  "https://raw.githubusercontent.com/jpadie/grbl1-test-widget/master/auto-generated-widget.html", // jpadie version
                // "http://jsfiddle.net/lunix80/L4nvo7r7/show/light/", //  my version
               //  "https://raw.githubusercontent.com/lunix80/grbl1-test-widget/master/auto-generated-widget.html", // my version on github
               function() {
@@ -1467,21 +1468,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
               }
             );
 
-            /*
-            // WebRTC Client com-chilipeppr-webrtcclient
-            chilipeppr.load(
-                "com-chilipeppr-webrtcclient",
-                "http://fiddle.jshell.net/chilipeppr/qWj4f/show/light/",
-
-                function() {
-                    cprequire(
-                        ["inline:com-chilipeppr-widget-webrtc-client"],
-
-                        function(webrtcclient) {
-                            webrtcclient.init();
-                        });
-                });
-                */
+            // Lunix Joystick 
             chilipeppr.load(
                 "#com-chilipeppr-grbl-joystick",
                 "https://raw.githubusercontent.com/lunix80/grbl-joystick-widget/master/auto-generated-widget.html",
