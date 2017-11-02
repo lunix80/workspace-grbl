@@ -316,8 +316,8 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
             chilipeppr.load(
                 "#com-chilipeppr-widget-serialport-instance",
-                "https://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
-//                "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
+                // "https://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
+                "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
                 function() {
                     console.log("mycallback got called after loading spjs module");
                     cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
@@ -1315,10 +1315,10 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
             // Serial Port Log Window
             // http://jsfiddle.net/chilipeppr/rczajbx0/
-            chilipeppr.load("#com-chilipeppr-serialport-log",
-                 // "http://fiddle.jshell.net/chilipeppr/rczajbx0/show/light/",
+            chilipeppr.load("#com-chilipeppr-serialport-log",\
                  "https://raw.githubusercontent.com/chilipeppr/widget-console/master/auto-generated-widget.html",
                   //   "http://jsfiddle.net/lunix80/trv108q4/show/light",
+                  // "http://fiddle.jshell.net/chilipeppr/rczajbx0/show/light/",
                 function() {
                     cprequire(
                         ["inline:com-chilipeppr-widget-spconsole"],
@@ -1483,7 +1483,8 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
             // Serial Port Selector
             // http://jsfiddle.net/chilipeppr/vetj5fvx/
             chilipeppr.load("com-chilipeppr-serialport-spselector",
-            "https://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
+            
+             "https://raw.githubusercontent.com/chilipeppr/widget-spjs/master/auto-generated-widget.html",
             //    "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
 
                 function() {
