@@ -442,6 +442,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
             // Macro
             // com-chilipeppr-ws-macro
+            /*
             chilipeppr.load(
                 "#com-chilipeppr-ws-macro",
                 "http://raw.githubusercontent.com/chilipeppr/widget-macro/master/auto-generated-widget.html",
@@ -470,7 +471,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                     });
                 }); //End Macro
 
-
+*/
 
             // Eagle BRD Import
             // com-chilipeppr-widget-eagle
@@ -706,7 +707,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
             // Workspace Menu with Workspace Billboard
             // http://jsfiddle.net/jlauer/yC8Hv/
-            /*
+
             chilipeppr.load(
                 "#com-chilipeppr-ws-gcode-menu-billboard",
                  "http://raw.githubusercontent.com/chilipeppr/widget-pubsubviewer/master/auto-generated-widget.html",
@@ -725,14 +726,13 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                     });
 
 
-*
             //Unsure what the purpose of this is; loading the wrong widgets.
             // MODIFY
             // This is a fiddle that looks at the Grbl workspace being instantiated
             // here and attaches 3 menu items. 1) the pubsub viewer dialog so users
             // can see what pubsubs this workspace may publish or subscribe to 2) It
             // lets them fork the workspace for their own use
-            /*
+
             chilipeppr.load(
                 "http://raw.githubusercontent.com/chilipeppr/widget-pubsubviewer/master/auto-generated-widget.html",
             //     "http://fiddle.jshell.net/chilipeppr/zMbL9/show/light/",
@@ -749,7 +749,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             "Workspace");
                     });
                 });
-                */
+              
 
             // 3D Viewer
             // http://jsfiddle.net/chilipeppr/y3HRF
@@ -1541,8 +1541,6 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
                     <!-- Auto Leveller -->
                     <div class="zhigh hidden" id="com-chilipeppr-ws-autolevel">Auto-Level Here</div>
-                    <!-- Macro -->
-                    <div class="zhigh hidden" id="com-chilipeppr-ws-macro">Macro Here</div>
                     <!-- Eagle BRD -->
                     <div class="zhigh hidden" id="com-chilipeppr-ws-eagle">Eagle BRD Here</div>
 
