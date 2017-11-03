@@ -271,7 +271,8 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
         addBillboardToWorkspaceMenu: function() {
             // get copy of billboard
             var billboardEl = this.getBillboard();
-            $('#' + this.id + ' .com-chilipeppr-ws-billboard').append(billboardEl);
+          //  $('#' + this.id + ' .com-chilipeppr-ws-billboard').append(billboardEl);
+          $('#com-chilipeppr-ws-billboard').append(billboardEl);
         },
         /**
          * Listen to window resize event.
@@ -749,7 +750,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             "Workspace");
                     });
                 });
-              
+
                   */
             // 3D Viewer
             // http://jsfiddle.net/chilipeppr/y3HRF
@@ -1515,7 +1516,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                                     <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-ws" role="menu">
-                                        <li id="com-chilipeppr-ws-gcode-menu-billboard" style="width:350px;"></li>
+                                        <li id="com-chilipeppr-ws-billboard" style="width:350px;"></li>
                                     </ul>
                                 </div>
                             </div>
