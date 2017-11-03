@@ -707,7 +707,7 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
             // Workspace Menu with Workspace Billboard
             // http://jsfiddle.net/jlauer/yC8Hv/
-
+/*
             chilipeppr.load(
                 "#com-chilipeppr-ws-gcode-menu-billboard",
                  "http://raw.githubusercontent.com/chilipeppr/widget-pubsubviewer/master/auto-generated-widget.html",
@@ -726,13 +726,19 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                     });
 
 
+
+            */
+                    
+    
+           
+
             //Unsure what the purpose of this is; loading the wrong widgets.
             // MODIFY
             // This is a fiddle that looks at the Grbl workspace being instantiated
             // here and attaches 3 menu items. 1) the pubsub viewer dialog so users
             // can see what pubsubs this workspace may publish or subscribe to 2) It
             // lets them fork the workspace for their own use
-
+/*
             chilipeppr.load(
                 "http://raw.githubusercontent.com/chilipeppr/widget-pubsubviewer/master/auto-generated-widget.html",
             //     "http://fiddle.jshell.net/chilipeppr/zMbL9/show/light/",
@@ -749,7 +755,29 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             "Workspace");
                     });
                 });
-              
+              */
+
+                chilipeppr.load(
+                    "http://raw.githubusercontent.com/chilipeppr/widget-pubsubviewer/master/auto-generated-widget.html",
+                    // "http://fiddle.jshell.net/chilipeppr/zMbL9/show/light/",
+                    function() {
+                        require(['inline:com-chilipeppr-elem-pubsubviewer'], function(pubsubviewer) {
+                            
+                            var el = $('#com-chilipeppr-ws-gcode-wrapper #com-chilipeppr-ws-gcode-menu .dropdown-menu-ws');
+                            console.log("got callback for attachto menu for workspace. attaching to el:", el);
+                            pubsubviewer.attachTo(
+                                el,
+                                that,
+                                "Workspace"
+                            );
+                            if (callback) callback();
+                        });
+                    }
+                );
+
+
+
+
 
             // 3D Viewer
             // http://jsfiddle.net/chilipeppr/y3HRF
@@ -1524,18 +1552,6 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                         <div class="btn-group">
                             <button type="button" class="btn btn-xs btn-default autolevel-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Allows you to auto-level your PCB before milling. Most raw PCB boards have a slight warpage. This widget lets you probe the warpage and then it auto-scales your Gcode to match the warpage so you get very clean/predictable z-positions in your milling job."
                             data-trigger="hover" data-delay="100">Auto-Level</button>
-                            <!-- </div>
-                        <div class="btn-group"> -->
-                            <button type="button" class="btn btn-xs btn-default macro-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run a macro." data-trigger="hover" data-delay="100">Macro</button>
-                            <!-- </div>
-                        <div class="btn-group"> -->
-
-                            <button type="button" class="btn btn-xs btn-default eagle-button" data-container="body" data-toggle="popover" data-placement="auto" xdata-content="Laser Solderer" data-trigger="hover" data-delay="100">Eagle BRD Import</button>
-                            <button type="button" class="btn btn-xs btn-default touchplate-button" data-container="body" data-toggle="popover" data-placement="auto" data-content="Use a touch plate to easily figure out your Z zero of your workpiece and set it." data-trigger="hover"
-                            data-delay="100">Touch Plate</button>
-                            <!-- </div>
-                        <div class="btn-group"> -->
-                            <!-- </div> -->
                         </div>
                     </div>
 
