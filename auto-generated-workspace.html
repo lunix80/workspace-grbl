@@ -728,9 +728,9 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
 
 
             */
-                    
-    
-           
+
+
+
 
             //Unsure what the purpose of this is; loading the wrong widgets.
             // MODIFY
@@ -762,18 +762,15 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                     // "http://fiddle.jshell.net/chilipeppr/zMbL9/show/light/",
                     function() {
                         require(['inline:com-chilipeppr-elem-pubsubviewer'], function(pubsubviewer) {
-                            
-                            var el = $('#com-chilipeppr-ws-gcode-wrapper #com-chilipeppr-ws-gcode-menu .dropdown-menu-ws');
+
+
                             console.log("got callback for attachto menu for workspace. attaching to el:", el);
                             pubsubviewer.attachTo(
-                                el,
-                                that,
-                                "Workspace"
-                            );
-                            if (callback) callback();
+                                $('#com-chilipeppr-ws-gcode-wrapper #com-chilipeppr-ws-gcode-menu .dropdown-menu-ws'),
+                                ws,
+                                "Workspace");
                         });
-                    }
-                );
+                    });
 
 
 
