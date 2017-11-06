@@ -1482,7 +1482,8 @@ cpdefine("inline:com-chilipeppr-workspace-grbl", ["chilipeppr_ready"], function(
                             spc.onRecvLine = newOnRecvLine;
                             spc.jsonOnQueue = newJsonOnQueue;
 
-                            spc.init(true, /^ok|^\n/);
+                            // filtering the console
+                            spc.init(true, /^ok|^\n|^<|^\[/);
 
                             // resize this console on a browser resize
                             $(window).on('resize', function(evt) {
